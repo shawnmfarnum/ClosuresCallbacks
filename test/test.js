@@ -2,11 +2,11 @@
 describe, it
 */
 
-var cc = require('../ccPractice')
-const chai = require('chai')
-var expect = chai.expect
+var cc = require('../ccPractice');
+const chai = require('chai');
+var expect = chai.expect;
 
-describe('Closure and Callback Excercises', function () {
+describe('Closure and Callback Exercises', function () {
   describe('Callback Exercise 1 - Calculator', function () {
     it('should have an add function that adds numbers', function () {
       expect(cc.add(1, 4)).to.eql(5)
@@ -44,10 +44,18 @@ describe('Closure and Callback Excercises', function () {
     })
   })
 
-  describe('Excercise 2 - Reverse Order', function () {
-    expect(cc.reverseOrder('A String')).to.eql('gnirtS A')
-    expect(cc.reverseOrder('ABC')).to.eql('CBA')
-    expect(cc.reverseOrder('')).to.eql('')
+  describe('Exercise 2 - Reverse Order', function () {
+    it("reverseOrder should return a function that reverses the order of a string", function () {
+      expect(cc.reverseOrder('A String')).to.eql('gnirtS A')
+      expect(cc.reverseOrder('ABC')).to.eql('CBA')
+      expect(cc.reverseOrder('')).to.eql('')
+    })
+
+    it("userHelp should return a function that reverses the order of a string provided by the user", function () {
+      expect(cc.userHelp(cc.reverseOrder, "To be or not to be")).to.eql("eb ot ton ro eb oT")
+      expect(cc.userHelp(cc.reverseOrder, "A bird in the hand")).to.eql("dnah eht ni drib A")
+      expect(cc.userHelp(cc.reverseOrder, "Killing two birds with one stone")).to.eql("enots eno htiw sdrib owt gnilliK")
+    })
   })
 
   describe('Closures - Exercise 1', function () {
@@ -60,12 +68,12 @@ describe('Closure and Callback Excercises', function () {
 
   describe('Closures - Exercise 2', function () {
     it("someFunc should return a function that adds it's input to the next", function () {
-      var counterStart = cc.countup
-      expect(cc.countup).to.eql(counterStart)
+      var counterStart = cc.counter()
+      expect(cc.counter()).to.eql(5)
       cc.counter()
-      expect(cc.countup).to.eql(counterStart + 1)
+      expect(cc.counter()).to.eql(7)
       cc.counter()
-      expect(cc.countup).to.eql(counterStart + 2)
+      expect(cc.counter()).to.eql(9)
     })
   })
 })
