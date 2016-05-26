@@ -1,6 +1,6 @@
 //Callbacks
 
-//1. We are going to create a simple calculator. Go ahead and create four functions that take in two numbers that add, subtract, multiply, and divide the two inputted values. In each function return the result.
+//1. We are going to create a simple calculator. Go ahead and create four functions called add, subtract, multiply, and divide that take in two numbers that add, subtract, multiply, and divide the two inputted values. In each function return the result.
 
 
 
